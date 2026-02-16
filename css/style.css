@@ -5,34 +5,3 @@
 * Template: mythdigital
 * Version: 1.0.0
 */
-/* Static export fallback: keep Elementor content visible without runtime animation hooks */
-.elementor-invisible,
-.elementor-invisible .elementor-widget-container,
-.elementor-element[style*="visibility: hidden"],
-.elementor-widget[style*="visibility: hidden"],
-.elementor-widget-container[style*="visibility: hidden"] {
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-/* Static fallback: prevent media cards from staying transparent/off-canvas */
-.post-thumbnail img,
-.service-image img,
-.elementor-widget-image img,
-.elementor-invisible img,
-.elementor-invisible .wp-post-image {
-  opacity: 1 !important;
-  visibility: visible !important;
-  transform: none !important;
-  filter: none !important;
-}
-
-/* Keep YouTube project videos visible: hide overlapping fallback image only when video iframe exists */
-.project-post-thumbnail .project-video-container {
-  position: relative;
-  z-index: 2;
-}
-
-.project-post-thumbnail .project-video-container + img.wp-post-image {
-  display: none !important;
-}
