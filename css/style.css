@@ -16,7 +16,6 @@
 }
 
 /* Static fallback: prevent media cards from staying transparent/off-canvas */
-.project-post-thumbnail img,
 .post-thumbnail img,
 .service-image img,
 .elementor-widget-image img,
