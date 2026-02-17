@@ -1,7 +1,41 @@
-/**
-* Theme Name: Myth Digital Child
-* Description: 
-* Author: https://templatehouse.net/
-* Template: mythdigital
-* Version: 1.0.0
-*/
+diff --git a/css/flourish-main-structure.css b/css/flourish-main-structure.css
+new file mode 100644
+index 0000000000000000000000000000000000000000..3b6672865560ea806310262249d47908b5ca6b8b
+--- /dev/null
++++ b/css/flourish-main-structure.css
+@@ -0,0 +1,35 @@
++/* =========================================================
++   Flourish main structure overrides (static export safety)
++   ========================================================= */
++
++/* 1) Keep Elementor blocks visible when animation hooks don't run */
++.elementor-invisible,
++.elementor-invisible .elementor-widget-container,
++.elementor-element[style*="visibility: hidden"],
++.elementor-widget[style*="visibility: hidden"],
++.elementor-widget-container[style*="visibility: hidden"] {
++  visibility: visible !important;
++  opacity: 1 !important;
++}
++
++/* 2) Keep core media visible in static mode */
++.post-thumbnail img,
++.service-image img,
++.elementor-widget-image img,
++.elementor-invisible img,
++.elementor-invisible .wp-post-image {
++  opacity: 1 !important;
++  visibility: visible !important;
++  transform: none !important;
++  filter: none !important;
++}
++
++/* 3) Project video cards: show iframe, hide adjacent fallback image */
++.project-post-thumbnail .project-video-container {
++  position: relative;
++  z-index: 2;
++}
++
++.project-post-thumbnail .project-video-container + img.wp-post-image {
++  display: none !important;
++}
