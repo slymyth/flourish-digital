@@ -1,4 +1,8 @@
-/* Static export fallback: keep Elementor content visible without runtime animation hooks */
+/* =========================================================
+   Flourish main structure overrides (static export safety)
+   ========================================================= */
+
+/* 1) Keep Elementor blocks visible when animation hooks don't run */
 .elementor-invisible,
 .elementor-invisible .elementor-widget-container,
 .elementor-element[style*="visibility: hidden"],
@@ -8,7 +12,7 @@
   opacity: 1 !important;
 }
 
-/* Static fallback: prevent media cards from staying transparent/off-canvas */
+/* 2) Keep core media visible in static mode */
 .post-thumbnail img,
 .service-image img,
 .elementor-widget-image img,
@@ -20,7 +24,7 @@
   filter: none !important;
 }
 
-/* Keep YouTube project videos visible: hide overlapping fallback image only when video iframe exists */
+/* 3) Project video cards: show iframe, hide adjacent fallback image */
 .project-post-thumbnail .project-video-container {
   position: relative;
   z-index: 2;
